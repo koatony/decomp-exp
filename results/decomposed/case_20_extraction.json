@@ -1,0 +1,12 @@
+{
+  "tax_year": 2017,
+  "filing_status": "Married filing jointly / Surviving spouse",
+  "gross_income": 310192.0,
+  "itemized_deductions_claimed": 17890.0,
+  "num_dependents": 1,
+  "employee_wages_paid": 45252.0,
+  "employee_benefit_plan_exclusions": 9832.0,
+  "num_employees": 1,
+  "is_domestic_employer": false,
+  "is_agricultural_employer": false
+}

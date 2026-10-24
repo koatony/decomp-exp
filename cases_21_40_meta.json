@@ -1,0 +1,162 @@
+{
+  "case_21": {
+    "case_num": 21,
+    "person": "Alice",
+    "year": 2018,
+    "gt_tax": 15777.0,
+    "text": "Alice and Bob got married on Feb 3rd, 1992. Alice and Bob have a child, Charlie, born October 9th, 2000. From 2004 to 2019, Bob furnished the costs of maintaining the home where Alice, Bob and Charlie lived during that time. Charlie married Dan on Feb 14th, 2018 and they file separate tax returns in 2018. Dan's principal place of abode for 2018 is different from Charlie's. Alice's gross income in 2018 was $54232, and Bob's gross income was $43245. Alice and Bob file a joint return in 2018 and take the standard deduction.",
+    "question": "How much tax does Alice have to pay in 2018? $15777"
+  },
+  "case_22": {
+    "case_num": 22,
+    "person": "Alice",
+    "year": 2017,
+    "gt_tax": 2174.0,
+    "text": "Alice has a son, Bob, who was born January 31st, 2014, and has lived at Alice's place since then. Alice's gross income for the year 2017 is $22895. Alice takes the standard deduction.",
+    "question": "How much tax does Alice have to pay in 2017? $2174"
+  },
+  "case_23": {
+    "case_num": 23,
+    "person": "Bob",
+    "year": 2014,
+    "gt_tax": 26549.0,
+    "text": "Alice and Bob got married on Feb 3rd, 1992. Alice died on July 9th, 2014. In 2014, Alice's gross income was $55431 and Bob's gross income was $64314. Bob files a joint return for himself and Alice for 2014. Bob takes the standard deduction.",
+    "question": "How much tax does Bob have to pay in 2014? $26549"
+  },
+  "case_24": {
+    "case_num": 24,
+    "person": "Alice",
+    "year": 2017,
+    "gt_tax": 19039.0,
+    "text": "Alice and Bob got married on November 23rd, 1994. Their son Charlie was born on July 5th, 2000. Bob died on March 15th, 2015. In 2017, Alice and Charlie lived in a house maintained by Alice. Alice's gross income for the year 2017 is $95129. Alice takes the standard deduction.",
+    "question": "How much tax does Alice have to pay in 2017? $19039"
+  },
+  "case_25": {
+    "case_num": 25,
+    "person": "Alice",
+    "year": 2018,
+    "gt_tax": 259487.0,
+    "text": "Bob is Charlie and Dorothy's son, born on April 15th, 2015. Alice married Charlie on August 8th, 2018. Alice's and Charlie's gross incomes in 2018 were $324311 and $414231 respectively. Alice, Bob and Charlie have the same principal place of abode in 2018. Alice and Charlie file jointly in 2018, and take the standard deduction.",
+    "question": "How much tax does Alice have to pay in 2018? $259487"
+  },
+  "case_26": {
+    "case_num": 26,
+    "person": "Alice",
+    "year": 2019,
+    "gt_tax": 196056.0,
+    "text": "Alice employed Bob from Jan 1st, 2011 to Oct 10, 2019, paying him $1513 in 2019. On Oct 10, 2019 Bob was diagnosed as disabled and retired. Alice paid Bob $298 because she had to terminate their contract due to Bob's disability. In 2019, Alice's gross income was $567192. In 2019, Alice lived together with Charlie, her father, in a house that she maintains. Charlie had no income in 2019. Alice takes the standard deduction in 2019.",
+    "question": "How much tax does Alice have to pay in 2019? $196056"
+  },
+  "case_27": {
+    "case_num": 27,
+    "person": "Alice",
+    "year": 2017,
+    "gt_tax": 3720.0,
+    "text": "In 2017, Alice was paid $33200. Bob is Alice's father since April 15th, 1978. In 2017, Alice and Bob lived in a house that Alice maintained. In 2017, Alice takes the standard deduction. Bob had no income in 2017.",
+    "question": "How much tax does Alice have to pay in 2017? $3720"
+  },
+  "case_28": {
+    "case_num": 28,
+    "person": "Alice",
+    "year": 2017,
+    "gt_tax": 344848.0,
+    "text": "Alice has paid wages of $53200 to Bob for domestic service done from Feb 1st, 2017 to Sep 2nd, 2017. Alice's gross income in 2017 was $921324. Alice takes the standard deduction.",
+    "question": "How much tax does Alice have to pay in 2017? $344848"
+  },
+  "case_29": {
+    "case_num": 29,
+    "person": "Alice",
+    "year": 2016,
+    "gt_tax": 40741.0,
+    "text": "Alice has been married since April 4th, 2015. Alice files a joint return with her spouse for 2016. Alice's and her spouse's gross income for the year 2016 is $164612. Alice has paid $4525 to Bob for work done in the year 2016. In 2016, Alice has also paid $9832 into a retirement fund for Bob, and paid $5322 into health insurance for Charlie, who is Alice's father and has retired in 2016. Charlie had no income in 2016. Alice and her spouse take the standard deduction.",
+    "question": "How much tax does Alice have to pay in 2016? $40741"
+  },
+  "case_30": {
+    "case_num": 30,
+    "person": "Alice",
+    "year": 2017,
+    "gt_tax": 249.0,
+    "text": "Alice's gross income for the year 2017 is $6662, Bob's gross income is $17896. Alice and Bob got married on Feb 3rd, 1992. From 2004 to 2019, Bob furnished the costs of maintaining the home where he and Alice lived during that time. In 2017, Alice and Bob file separate returns, and they both take the standard deduction.",
+    "question": "How much tax does Alice have to pay in 2017? $249"
+  },
+  "case_31": {
+    "case_num": 31,
+    "person": "Alice",
+    "year": 2017,
+    "gt_tax": 6621.0,
+    "text": "In 2017, Alice was paid $39212, and Bob had no income. Alice and Bob have been married since Feb 3rd, 2017. Alice and Bob file separately in 2017.",
+    "question": "How much tax does Alice have to pay in 2017? $6621"
+  },
+  "case_32": {
+    "case_num": 32,
+    "person": "Alice",
+    "year": 2019,
+    "gt_tax": 2242833.0,
+    "text": "Alice's gross income in 2019 was $5723215. Alice has employed Bob from Jan 1st, 2011 to Feb 9th, 2019. Alice paid Bob $3255 in 2019. On Oct 10, 2019 Bob retired because he reached age 65. Alice paid Bob $12980 as a retirement bonus. In 2019, Alice takes the standard deduction.",
+    "question": "How much tax does Alice have to pay in 2019? $2242833"
+  },
+  "case_33": {
+    "case_num": 33,
+    "person": "Alice",
+    "year": 2015,
+    "gt_tax": 27181.0,
+    "text": "Alice and Bob got married on Feb 3rd, 1992. Alice paid each of her 87 employees $5207 for work done in 2015. Alice paid each of her 70 employees $6341 for work done in 2016. Alice and Bob file jointly in 2015 and had no income. They take the standard deduction.",
+    "question": "How much tax does Alice have to pay in 2015? $27181"
+  },
+  "case_34": {
+    "case_num": 34,
+    "person": "Alice",
+    "year": 2017,
+    "gt_tax": 2684.0,
+    "text": "Alice's gross income for the year 2017 is $22895. Alice takes the standard deduction.",
+    "question": "How much tax does Alice have to pay in 2017? $2684"
+  },
+  "case_35": {
+    "case_num": 35,
+    "person": "Alice",
+    "year": 2017,
+    "gt_tax": 2384.0,
+    "text": "Alice's gross income for the year 2017 is $22895. In 2017, Alice takes the standard deduction. Alice has a son, Bob, who has the same principal place of abode as her in 2017 and is not married.",
+    "question": "How much tax does Alice have to pay in 2017? $2384"
+  },
+  "case_36": {
+    "case_num": 36,
+    "person": "Alice",
+    "year": 2017,
+    "gt_tax": 10018.0,
+    "text": "Alice and Bob got married on Feb 3rd, 1992. Alice and Bob have a child, Charlie, born October 9th, 2000. From 2004 to 2019, Bob furnished the costs of maintaining the home where he and Charlie lived during that time. From 2015 to 2018, Alice had a different principal place of abode. In 2017, Alice was paid $33200, and Bob's income was $32311. Alice was born March 2nd, 1950 and Bob was born March 3rd, 1955. In 2017, Alice and Bob file jointly and take the standard deduction.",
+    "question": "How much tax does Alice have to pay in 2017? $10018"
+  },
+  "case_37": {
+    "case_num": 37,
+    "person": "Alice",
+    "year": 2018,
+    "gt_tax": 32045.0,
+    "text": "Alice was born January 10th, 1992. Bob was born January 31st, 2014. Alice adopted Bob on March 4th, 2018 and Bob has lived with Alice since, in a house that Alice maintains. Alice's gross income in 2018 was $141177. Alice takes the standard deduction.",
+    "question": "How much tax does Alice have to pay in 2018? $32045"
+  },
+  "case_38": {
+    "case_num": 38,
+    "person": "Alice",
+    "year": 2017,
+    "gt_tax": 243097.0,
+    "text": "Alice got married on December 30th, 2017. Alice files a joint return with her spouse for 2017. Alice's and her spouse's gross income for the year 2017 is $684642. Alice has itemized deductions of $23029 for donating cash to a charity.",
+    "question": "How much tax does Alice have to pay in 2017? $243097"
+  },
+  "case_39": {
+    "case_num": 39,
+    "person": "Bob",
+    "year": 2015,
+    "gt_tax": 6812.0,
+    "text": "Alice, born Jun 7, 1964, has a son, Bob, born Feb 7, 1988. Bob has a son, Charlie, born Jun 29, 2014. Alice, Bob and Charlie have the same principal place of abode in 2015. Bob's gross income in 2015 is $43591. Bob takes the standard deduction.",
+    "question": "How much tax does Bob have to pay in 2015? $6812"
+  },
+  "case_40": {
+    "case_num": 40,
+    "person": "Alice",
+    "year": 2017,
+    "gt_tax": 279126.0,
+    "text": "Alice has paid $3200 to her father Bob for work done from Feb 1st, 2017 to Sep 2nd, 2017, in Baltimore, Maryland, USA. Alice and Charlie got married on April 5th, 2012. Alice and Charlie were legally separated under a decree of divorce on September 16th, 2017. Alice's gross income in 2017 was $756420. Alice takes the standard deduction.",
+    "question": "How much tax does Alice have to pay in 2017? $279126"
+  }
+}

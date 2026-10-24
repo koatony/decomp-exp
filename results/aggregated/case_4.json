@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_4",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_4.pl",
+  "scenario_text": "Alice has paid $3200 to Bob for domestic service done from Feb 1st, 2012 to Sep 1st, 2012, in Baltimore, Maryland, USA. Bob has paid $4500 to Alice for work done from Mar 31st, 2012 to Dec 31st, 2012. Alice takes the standard deduction in 2012.",
+  "question_text": "How much tax does Alice have to pay in 2012?",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Alice",
+    "tax_year": 2012,
+    "income_tax": 0.0,
+    "employment_tax": 192.0,
+    "reasoning": "Alice's gross income for 2012 is $4500 (from Bob). She takes the standard deduction of $3000 and claims one personal exemption of $2000. Her taxable income is calculated as $4500 (Gross Income) - $3000 (Standard Deduction) - $2000 (Personal Exemption) = -$500. Since taxable income cannot be negative for tax calculation, it is $0. Based on the 2012 single tax schedule, 15% of $0 results in an income tax of $0. For employment tax (FUTA), Alice paid $3200 for domestic service from Feb 1st to Sep 1st, 2012. To determine if she meets the FUTA employer threshold, we divide the total payment by the months of service ($3200 / 7 months = $457.14 per month). In Q2 (Apr-Jun), she paid for 3 months of service, totaling $457.14 * 3 = $1371.42. Since this amount exceeds the $1,000 FUTA employer threshold for domestic service in a calendar quarter, Alice is subject to FUTA tax. The FUTA tax is 6% of the total wages paid ($3200), resulting in an employment tax of $3200 * 0.06 = $192.00."
+  },
+  "rule_execution": {
+    "income_tax": 0.0,
+    "employment_tax": 192.0,
+    "calculated_total_tax": 192.0,
+    "ground_truth_tax": 192.0,
+    "matches_ground_truth": true
+  }
+}

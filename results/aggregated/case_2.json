@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_2",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_2.pl",
+  "scenario_text": "Alice and Bob got married on Feb 3rd, 1992. Alice and Bob have a child, Charlie, born October 9th, 2000. Alice died on July 9th, 2014. From 2004 to 2019, Bob furnished 40% of the costs of maintaining the home where he and Charlie lived during that time. In 2013, Alice and Bob filed jointly, and took the standard deduction. In 2013, Alice earned $65400 and Bob earned $56400.",
+  "question_text": "How much tax does Alice have to pay in 2013?",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Alice",
+    "tax_year": 2013,
+    "income_tax": 26567.0,
+    "employment_tax": 0.0,
+    "reasoning": "Alice and Bob filed jointly in 2013. Their combined gross income was $65,400 (Alice) + $56,400 (Bob) = $121,800. They took the married filing jointly standard deduction of $6,000. They are eligible for three personal exemptions: Alice, Bob, and their child Charlie. Each exemption is $2,000, totaling $6,000. Taxable income is calculated as Gross Income - Standard Deduction - Exemptions = $121,800 - $6,000 - $6,000 = $109,800. Using the 2013 married filing jointly tax schedule, $109,800 falls into the bracket '$89,150 < Taxable Income <= $140,000'. The tax is calculated as $20,165 + 31% of the excess over $89,150. Excess = $109,800 - $89,150 = $20,650. Tax = $20,165 + (0.31 * $20,650) = $20,165 + $6,401.50 = $26,566.50. Rounding half-up to the nearest integer, the income tax is $26,567.00. No information was provided regarding wages subject to FUTA, so employment_tax is $0."
+  },
+  "rule_execution": {
+    "income_tax": 26567.0,
+    "employment_tax": 0.0,
+    "calculated_total_tax": 26567.0,
+    "ground_truth_tax": 26567.0,
+    "matches_ground_truth": true
+  }
+}

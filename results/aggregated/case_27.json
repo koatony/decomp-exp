@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_27",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_27.pl",
+  "scenario_text": "In 2017, Alice was paid $33200. Bob is Alice's father since April 15th, 1978. In 2017, Alice and Bob lived in a house that Alice maintained. In 2017, Alice takes the standard deduction. Bob had no income in 2017.",
+  "question_text": "How much tax does Alice have to pay in 2017?",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Alice",
+    "tax_year": 2017,
+    "income_tax": 3720.0,
+    "employment_tax": 0.0,
+    "reasoning": "Alice's filing status is Head of Household. She is unmarried and maintains a home where her father, Bob, lives. Bob had no income and is Alice's father, making him a qualifying relative dependent for whom Alice can claim an exemption. Alice's Adjusted Gross Income (AGI) is $33,200. She takes the standard deduction for Head of Household, which is $4,400. She can claim two personal exemptions: one for herself ($2,000) and one for her dependent father, Bob ($2,000), totaling $4,000. Her AGI ($33,200) is below the PEP phaseout threshold for Head of Household ($275,000), so the full exemption amount applies. Taxable Income is calculated as AGI - Standard Deduction - Personal Exemptions = $33,200 - $4,400 - $4,000 = $24,800. Using the 2017 Head of Household tax schedule, $24,800 falls into the first bracket (Taxable Income <= $29,600), taxed at 15%. Therefore, income_tax = 15% of $24,800 = $3,720.0. The scenario states Alice was 'paid $33200', indicating she is an employee. IRC Section 3301 refers to employer FUTA tax. As Alice is not an employer, she is not liable for FUTA tax, so employment_tax is $0.0."
+  },
+  "rule_execution": {
+    "income_tax": 3720.0,
+    "employment_tax": 0.0,
+    "calculated_total_tax": 3720.0,
+    "ground_truth_tax": 3720.0,
+    "matches_ground_truth": true
+  }
+}

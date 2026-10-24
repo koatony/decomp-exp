@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_46",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_46.pl",
+  "scenario_text": "Alice has paid $3200 to Bob for agricultural labor done from Feb 1st, 2020 to Sep 2nd, 2020. Alice paid Bob with eggs, grapes and hay. Alice has been married since 1999. Alice files a joint return with her spouse for 2020. Alice's and her spouse's gross income for the year 2020 is $103272. Alice takes the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2020?",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Alice",
+    "tax_year": 2020,
+    "income_tax": 17399.0,
+    "employment_tax": 0.0,
+    "reasoning": "For income tax, Alice files a joint return with her spouse. Their gross income for 2020 is $103,272. They take the standard deduction for married filing jointly, which is $24,000 for 2020. Personal exemptions are $0 for 2020. Therefore, their taxable income is $103,272 (Gross Income) - $24,000 (Standard Deduction) = $79,272. Using the Married filing jointly tax schedule (IRC §1(a)) for 2020, the tax is calculated as $5,535 + 28% of the amount over $36,900. This results in $5,535 + 0.28 * ($79,272 - $36,900) = $5,535 + 0.28 * $42,372 = $5,535 + $11,864.16 = $17,399.16. Rounded to the nearest integer, the income tax is $17,399.\n\nFor employment tax (FUTA), Alice paid Bob $3,200 for agricultural labor using eggs, grapes, and hay. IRC §3306(b)(11) explicitly excludes remuneration for agricultural labor paid in any medium other than cash from the definition of 'wages' for FUTA purposes. Since the payment was entirely non-cash, the FUTA taxable wages are $0. Furthermore, Alice did not meet the agricultural labor employment threshold of $20,000 in cash remuneration in any calendar quarter (IRC §3306(a)(2)). Therefore, no FUTA tax is owed, resulting in an employment tax of $0."
+  },
+  "rule_execution": {
+    "income_tax": 17399.0,
+    "employment_tax": 0.0,
+    "calculated_total_tax": 17399.0,
+    "ground_truth_tax": 17399.0,
+    "matches_ground_truth": true
+  }
+}

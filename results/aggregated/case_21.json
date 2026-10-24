@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_21",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_21.pl",
+  "scenario_text": "Alice and Bob got married on Feb 3rd, 1992. Alice and Bob have a child, Charlie, born October 9th, 2000. From 2004 to 2019, Bob furnished the costs of maintaining the home where Alice, Bob and Charlie lived during that time. Charlie married Dan on Feb 14th, 2018 and they file separate tax returns in 2018. Dan's principal place of abode for 2018 is different from Charlie's. Alice's gross income in 2018 was $54232, and Bob's gross income was $43245. Alice and Bob file a joint return in 2018 and take the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2018?",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Alice",
+    "tax_year": 2018,
+    "income_tax": 15777.0,
+    "employment_tax": 0.0,
+    "reasoning": "Alice and Bob filed a joint return in 2018. Their combined gross income was $54,232 (Alice) + $43,245 (Bob) = $97,477. They took the standard deduction for married filing jointly, which was $24,000. Personal exemptions were $0 for 2018. Their taxable income was $97,477 - $24,000 = $73,477. Using the Married Filing Jointly tax schedule for 2018: The first $36,900 is taxed at 15%, resulting in $36,900 * 0.15 = $5,535. The remaining taxable income is $73,477 - $36,900 = $36,577, which is taxed at 28%, resulting in $36,577 * 0.28 = $10,241.56. The total income tax is $5,535 + $10,241.56 = $15,776.56. Rounded half-up to the nearest integer, the income tax is $15,777. There is no information indicating Alice or Bob are employers or paid wages subject to FUTA tax, so the employment tax (FUTA) is $0."
+  },
+  "rule_execution": {
+    "income_tax": 15777.0,
+    "employment_tax": 0.0,
+    "calculated_total_tax": 15777.0,
+    "ground_truth_tax": 15777.0,
+    "matches_ground_truth": true
+  }
+}

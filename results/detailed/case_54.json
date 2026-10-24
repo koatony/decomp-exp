@@ -1,0 +1,72 @@
+{
+  "pipeline": "detailed_facts_extraction",
+  "case_id": "tax_case_54",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_54.pl",
+  "scenario_text": "Alice and Bob got married on Feb 3rd, 1998, and have a son Charlie, born April 1st, 1999. Bob died on Jan 1st, 2017. In 2019, Charlie lives at the house that Alice maintains as her principal place of abode. Alice's gross income for the year 2019 is $236422. Alice takes the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2019?",
+  "llm_extracted_facts": {
+    "target_person": "Alice",
+    "deceased_spouse": "Bob",
+    "tax_year": 2019,
+    "gross_income": 236422.0,
+    "marriages": [
+      {
+        "id": "marriage_Alice_Bob_19980203",
+        "spouses": [
+          "Alice",
+          "Bob"
+        ],
+        "start_date": 19980203
+      }
+    ],
+    "deaths": [
+      {
+        "id": "death_Bob_20170101",
+        "person": "Bob",
+        "date": 20170101
+      }
+    ],
+    "children": [
+      {
+        "id": "child_Charlie_19990401",
+        "name": "Charlie",
+        "parents": [
+          "Alice",
+          "Bob"
+        ],
+        "birth_date": 19990401
+      }
+    ],
+    "residences": [
+      {
+        "id": "residence_Alice_2019",
+        "person": "Alice",
+        "abode": "house",
+        "start_date": 20190101,
+        "end_date": 20191231
+      },
+      {
+        "id": "residence_Charlie_2019",
+        "person": "Charlie",
+        "abode": "house",
+        "start_date": 20190101,
+        "end_date": 20191231
+      }
+    ],
+    "household_maintenances": [
+      {
+        "id": "maintenance_Alice_2019",
+        "agent": "Alice",
+        "abode": "house",
+        "amount": 0.0,
+        "start_date": 20190101
+      }
+    ]
+  },
+  "rule_execution": {
+    "derived_filing_status": "surviving_spouse",
+    "calculated_total_tax": 62000.0,
+    "ground_truth_tax": 62000.0,
+    "matches_ground_truth": true
+  }
+}

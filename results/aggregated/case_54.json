@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_54",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_54.pl",
+  "scenario_text": "Alice and Bob got married on Feb 3rd, 1998, and have a son Charlie, born April 1st, 1999. Bob died on Jan 1st, 2017. In 2019, Charlie lives at the house that Alice maintains as her principal place of abode. Alice's gross income for the year 2019 is $236422. Alice takes the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2019?",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Alice",
+    "tax_year": 2019,
+    "income_tax": 62000.0,
+    "employment_tax": 0.0,
+    "reasoning": "Alice's husband, Bob, died on January 1st, 2017. For the tax year 2019, Alice qualifies as a 'Surviving Spouse' (also known as Qualifying Widow(er)) under IRC Section 2(a) because 2019 is the second taxable year following the year of her spouse's death (2018 and 2019), and she maintains a home for her son, Charlie, who lives with her (assuming Charlie is a dependent for this purpose). This filing status allows her to use the Married Filing Jointly tax rates and standard deduction.\n\n1.  **Income Tax Calculation (IRC Section 1):**\n    *   Gross Income: $236,422\n    *   Standard Deduction (Surviving Spouse): $24,000 (as per IRC §63(c)(7)(ii))\n    *   Personal Exemptions: $0 (as per IRC §151(d)(5) for 2019)\n    *   Taxable Income = Gross Income - Standard Deduction - Personal Exemptions\n    *   Taxable Income = $236,422 - $24,000 - $0 = $212,422\n\n    Using the Married filing jointly / Surviving spouse tax schedule (IRC §1(a)) for a taxable income of $212,422:\n    *   Tax on the first $140,000: $35,928.50\n    *   Tax on the excess over $140,000 ($212,422 - $140,000 = $72,422) at 36%:\n        $72,422 * 0.36 = $26,071.92\n    *   Total Income Tax = $35,928.50 + $26,071.92 = $62,000.42\n    *   Rounded to the nearest integer: $62,000.\n\n2.  **Employment Tax Calculation (IRC Section 3301 - FUTA):**\n    *   FUTA tax is an employer-paid tax. The scenario provides Alice's gross income but does not indicate that she is an employer or that she paid any wages to employees. Therefore, there is no FUTA tax liability for Alice based on the information provided."
+  },
+  "rule_execution": {
+    "income_tax": 62000.0,
+    "employment_tax": 0.0,
+    "calculated_total_tax": 62000.0,
+    "ground_truth_tax": 62000.0,
+    "matches_ground_truth": true
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "tax_year": 2017,
+  "taxpayer_gross_income": 310192,
+  "taxpayer_itemized_deductions_otherwise_allowable": 17890,
+  "taxpayer_marriage_date": "2010-01-14",
+  "taxpayer_spouse_death_date": "2016-11-23",
+  "taxpayer_maintains_household_since_year": 2014,
+  "other_persons_details": [
+    {
+      "name": "daughter",
+      "relationship_to_taxpayer": "daughter",
+      "lives_with_taxpayer": true
+    },
+    {
+      "name": "Charlie",
+      "relationship_to_taxpayer": "father",
+      "gross_income": 0,
+      "retired_year": 2016
+    }
+  ],
+  "payments_made_by_taxpayer": [
+    {
+      "recipient_name": "Bob",
+      "amount": 45252,
+      "purpose": "work"
+    },
+    {
+      "recipient_name": "Bob",
+      "amount": 9832,
+      "purpose": "retirement_fund"
+    },
+    {
+      "recipient_name": "Charlie",
+      "amount": 5322,
+      "purpose": "health_insurance"
+    }
+  ]
+}

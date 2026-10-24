@@ -1,0 +1,105 @@
+{
+  "pipeline": "detailed_facts_extraction",
+  "case_id": "tax_case_21",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_21.pl",
+  "scenario_text": "Alice and Bob got married on Feb 3rd, 1992. Alice and Bob have a child, Charlie, born October 9th, 2000. From 2004 to 2019, Bob furnished the costs of maintaining the home where Alice, Bob and Charlie lived during that time. Charlie married Dan on Feb 14th, 2018 and they file separate tax returns in 2018. Dan's principal place of abode for 2018 is different from Charlie's. Alice's gross income in 2018 was $54232, and Bob's gross income was $43245. Alice and Bob file a joint return in 2018 and take the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2018?",
+  "llm_extracted_facts": {
+    "target_person": "Alice",
+    "spouse": "Bob",
+    "tax_year": 2018,
+    "gross_income": 54232.0,
+    "spouse_gross_income": 43245.0,
+    "persons": [
+      {
+        "id": "alice",
+        "name": "Alice",
+        "birth_date": null
+      },
+      {
+        "id": "bob",
+        "name": "Bob",
+        "birth_date": null
+      },
+      {
+        "id": "charlie",
+        "name": "Charlie",
+        "birth_date": 20001009
+      },
+      {
+        "id": "dan",
+        "name": "Dan",
+        "birth_date": null
+      }
+    ],
+    "marriages": [
+      {
+        "id": "marriage_AB",
+        "spouse_1": "alice",
+        "spouse_2": "bob",
+        "start_date": 19920203
+      },
+      {
+        "id": "marriage_CD",
+        "spouse_1": "charlie",
+        "spouse_2": "dan",
+        "start_date": 20180214
+      }
+    ],
+    "joint_returns": [
+      {
+        "id": "joint_return_AB_2018",
+        "taxpayer_1": "alice",
+        "taxpayer_2": "bob",
+        "tax_year": 2018,
+        "filing_date": null
+      }
+    ],
+    "residences": [
+      {
+        "id": "res_alice_main_home_2004_2019",
+        "person": "alice",
+        "abode": "main_home",
+        "start_date": 20040101,
+        "end_date": 20191231
+      },
+      {
+        "id": "res_bob_main_home_2004_2019",
+        "person": "bob",
+        "abode": "main_home",
+        "start_date": 20040101,
+        "end_date": 20191231
+      },
+      {
+        "id": "res_charlie_main_home_2004_2019",
+        "person": "charlie",
+        "abode": "main_home",
+        "start_date": 20040101,
+        "end_date": 20191231
+      },
+      {
+        "id": "res_dan_dan_abode_2018",
+        "person": "dan",
+        "abode": "dan_abode",
+        "start_date": 20180101,
+        "end_date": 20181231
+      }
+    ],
+    "household_maintenances": [
+      {
+        "id": "maint_bob_main_home_2004",
+        "agent": "bob",
+        "abode": "main_home",
+        "amount": null,
+        "start_date": 20040101
+      }
+    ]
+  },
+  "rule_execution": {
+    "derived_filing_status": "married_filing_jointly",
+    "spouse": "bob",
+    "calculated_total_tax": 15777.0,
+    "ground_truth_tax": 15777.0,
+    "matches_ground_truth": true
+  }
+}

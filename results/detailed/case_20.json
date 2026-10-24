@@ -1,0 +1,82 @@
+{
+  "pipeline": "detailed_facts_extraction",
+  "case_id": "tax_case_20",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_20.pl",
+  "scenario_text": "In 2017, Alice's gross income was $310192. Since 2014, Alice maintains a house where she and her daughter live. Alice was married since Jan 14th, 2010 until her husband died on Nov 23rd, 2016. In 2017, Alice is allowed itemized deductions of $17890. Alice has paid $45252 to Bob for work done in the year 2017. In 2017, Alice has also paid $9832 into a retirement fund for Bob, and paid $5322 into health insurance for Charlie, who is Alice's father and has retired in 2016. Charlie had no income in 2017.",
+  "question_text": "How much tax does Alice have to pay in 2017?",
+  "llm_extracted_facts": {
+    "target_person": "Alice",
+    "tax_year": 2017,
+    "filing_status": "surviving_spouse",
+    "gross_income": 310192.0,
+    "claimed_itemized_deductions": 17890.0,
+    "marriage": {
+      "spouse_1": "Alice",
+      "spouse_2": "Alice's husband",
+      "start_date": 20100114
+    },
+    "death": {
+      "person": "Alice's husband",
+      "death_date": 20161123
+    },
+    "dependents": [
+      {
+        "id": "Alice's daughter",
+        "name": "Alice's daughter",
+        "relationship": "daughter",
+        "gross_income": 0.0
+      },
+      {
+        "id": "Charlie",
+        "name": "Charlie",
+        "relationship": "father",
+        "gross_income": 0.0
+      }
+    ],
+    "payments": [
+      {
+        "id": "payment_to_bob_work",
+        "agent": "Alice",
+        "patient": "Bob",
+        "amount": 45252.0,
+        "start_date": 20170101,
+        "purpose": "work",
+        "is_plan": false,
+        "beneficiary": null
+      },
+      {
+        "id": "retirement_fund_bob",
+        "agent": "Alice",
+        "patient": "Bob",
+        "amount": 9832.0,
+        "start_date": 20170101,
+        "purpose": "retirement_fund",
+        "is_plan": true,
+        "beneficiary": "Bob"
+      },
+      {
+        "id": "health_insurance_charlie",
+        "agent": "Alice",
+        "patient": "Charlie",
+        "amount": 5322.0,
+        "start_date": 20170101,
+        "purpose": "health_insurance",
+        "is_plan": true,
+        "beneficiary": "Charlie"
+      }
+    ],
+    "household_furnish_ratio": 0.0,
+    "remarried": false
+  },
+  "rule_execution": {
+    "is_surviving_spouse": false,
+    "applied_itemized_deductions": 17584.0,
+    "applied_exemptions": 5400.0,
+    "computed_taxable_income": 287208.0,
+    "computed_income_tax": 90263.0,
+    "computed_employment_tax": 420.0,
+    "calculated_total_tax": 90683.0,
+    "ground_truth_tax": 90683.0,
+    "matches_ground_truth": true
+  }
+}

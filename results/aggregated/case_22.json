@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_22",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_22.pl",
+  "scenario_text": "Alice has a son, Bob, who was born January 31st, 2014, and has lived at Alice's place since then. Alice's gross income for the year 2017 is $22895. Alice takes the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2017?",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Alice",
+    "tax_year": 2017,
+    "income_tax": 2174.0,
+    "employment_tax": 0.0,
+    "reasoning": "Alice qualifies for Head of Household filing status because she maintains a household for herself and her son, Bob, who is a qualifying child (born Jan 31, 2014, making him 3 years old in 2017 and living with her). Her gross income is $22,895. As Head of Household, Alice takes the standard deduction of $4,400 (IRC §63(c)(2)(B)). She can claim two personal exemptions (for herself and Bob) at $2,000 each, totaling $4,000 (IRC §151). Her Adjusted Gross Income (AGI) is $22,895. Taxable income is calculated as AGI - Standard Deduction - Personal Exemptions = $22,895 - $4,400 - $4,000 = $14,495. Using the Head of Household tax schedule (IRC §1(b)), for taxable income up to $29,600, the rate is 15%. Therefore, income tax = 15% of $14,495 = $2,174.25. Rounded to the nearest integer, the income tax is $2,174. There is no information indicating Alice is an employer or has paid wages subject to FUTA tax, so the employment tax (FUTA) is $0."
+  },
+  "rule_execution": {
+    "income_tax": 2174.0,
+    "employment_tax": 0.0,
+    "calculated_total_tax": 2174.0,
+    "ground_truth_tax": 2174.0,
+    "matches_ground_truth": true
+  }
+}

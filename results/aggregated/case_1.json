@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_1",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_1.pl",
+  "scenario_text": "Alice was paid $1200 in 2019 for services performed in jail. Alice was committed to jail from January 24, 2015 to May 5th, 2019. From May 5th 2019 to Dec 31st 2019, Alice was paid $5320 in remuneration. Alice takes the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2019? $0",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Alice",
+    "tax_year": 2019,
+    "income_tax": 0.0,
+    "employment_tax": 0.0,
+    "reasoning": "Alice's total gross income for 2019 is $1200 (services in jail) + $5320 (remuneration) = $6520. For 2019, the standard deduction for a single individual is $12,200. Since Alice's gross income ($6520) is less than her standard deduction ($12,200), her taxable income is $0, resulting in an income tax of $0. IRC Section 3301 imposes FUTA tax on employers, not employees. Therefore, Alice has no employment tax liability under IRC Section 3301."
+  },
+  "rule_execution": {
+    "income_tax": 0.0,
+    "employment_tax": 0.0,
+    "calculated_total_tax": 0.0,
+    "ground_truth_tax": 0.0,
+    "matches_ground_truth": true
+  }
+}

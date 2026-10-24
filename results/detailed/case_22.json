@@ -1,0 +1,56 @@
+{
+  "pipeline": "detailed_facts_extraction",
+  "case_id": "tax_case_22",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_22.pl",
+  "scenario_text": "Alice has a son, Bob, who was born January 31st, 2014, and has lived at Alice's place since then. Alice's gross income for the year 2017 is $22895. Alice takes the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2017?",
+  "llm_extracted_facts": {
+    "target_person": "Alice",
+    "tax_year": 2017,
+    "gross_income": 22895.0,
+    "is_unmarried": true,
+    "persons": [
+      {
+        "id": "Alice",
+        "name": "Alice",
+        "birth_date": null
+      },
+      {
+        "id": "Bob",
+        "name": "Bob",
+        "birth_date": 20140131
+      }
+    ],
+    "parent_child_relationships": [
+      {
+        "id": "Alice_Bob_parent_child",
+        "parent": "Alice",
+        "child": "Bob",
+        "relationship": "parent"
+      }
+    ],
+    "residences": [
+      {
+        "id": "Alice_residence_2017",
+        "person": "Alice",
+        "abode": "Alice's place",
+        "start_date": 20170101,
+        "end_date": 20171231
+      },
+      {
+        "id": "Bob_residence_2017",
+        "person": "Bob",
+        "abode": "Alice's place",
+        "start_date": 20140131,
+        "end_date": 20171231
+      }
+    ],
+    "household_maintenances": []
+  },
+  "rule_execution": {
+    "derived_filing_status": "head_of_household",
+    "calculated_total_tax": 2174.0,
+    "ground_truth_tax": 2174.0,
+    "matches_ground_truth": true
+  }
+}

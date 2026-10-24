@@ -1,0 +1,96 @@
+{
+  "pipeline": "detailed_facts_extraction",
+  "case_id": "tax_case_10",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_10.pl",
+  "scenario_text": "Alice and Harold got married on Sep 3rd, 1992. Harold and Alice have a son, born Jan 25th, 2000. Harold died on Feb 28th, 2016. They had been living in the same house since 1993, maintained by Alice. Alice and her son continued doing so after Harold's death. Alice's gross income for the year 2017 was $236422. Alice has employed Bob, Cameron, Dan, Emily, Fred and George for agricultural labor from Sep 9th to Sep 30th 2017, and paid them $5012 each. Alice takes the standard deduction in 2017.",
+  "question_text": "How much tax does Alice have to pay in 2017?",
+  "llm_extracted_facts": {
+    "target_person": "Alice",
+    "tax_year": 2017,
+    "filing_status": "surviving_spouse",
+    "gross_income": 236422.0,
+    "marriage": {
+      "spouse_1": "Alice",
+      "spouse_2": "Harold",
+      "start_date": 19920903
+    },
+    "death": {
+      "person": "Harold",
+      "death_date": 20160228
+    },
+    "dependents": [
+      {
+        "id": "son_of_alice_and_harold",
+        "name": "son_of_alice_and_harold",
+        "parents": [
+          "Alice",
+          "Harold"
+        ],
+        "birth_date": 20000125
+      }
+    ],
+    "payments": [
+      {
+        "id": "payment_to_bob_2017",
+        "agent": "Alice",
+        "patient": "Bob",
+        "amount": 5012.0,
+        "start_date": 20170909,
+        "purpose": "agricultural_labor"
+      },
+      {
+        "id": "payment_to_cameron_2017",
+        "agent": "Alice",
+        "patient": "Cameron",
+        "amount": 5012.0,
+        "start_date": 20170909,
+        "purpose": "agricultural_labor"
+      },
+      {
+        "id": "payment_to_dan_2017",
+        "agent": "Alice",
+        "patient": "Dan",
+        "amount": 5012.0,
+        "start_date": 20170909,
+        "purpose": "agricultural_labor"
+      },
+      {
+        "id": "payment_to_emily_2017",
+        "agent": "Alice",
+        "patient": "Emily",
+        "amount": 5012.0,
+        "start_date": 20170909,
+        "purpose": "agricultural_labor"
+      },
+      {
+        "id": "payment_to_fred_2017",
+        "agent": "Alice",
+        "patient": "Fred",
+        "amount": 5012.0,
+        "start_date": 20170909,
+        "purpose": "agricultural_labor"
+      },
+      {
+        "id": "payment_to_george_2017",
+        "agent": "Alice",
+        "patient": "George",
+        "amount": 5012.0,
+        "start_date": 20170909,
+        "purpose": "agricultural_labor"
+      }
+    ],
+    "household_furnish_ratio": 1.0,
+    "remarried": false
+  },
+  "rule_execution": {
+    "is_surviving_spouse": true,
+    "applied_standard_deduction": 6000.0,
+    "applied_exemptions": 4000.0,
+    "computed_taxable_income": 226422.0,
+    "computed_income_tax": 67040.0,
+    "computed_employment_tax": 1804.0,
+    "calculated_total_tax": 68844.0,
+    "ground_truth_tax": 68844.0,
+    "matches_ground_truth": true
+  }
+}

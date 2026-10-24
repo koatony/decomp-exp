@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_28",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_28.pl",
+  "scenario_text": "Alice has paid wages of $53200 to Bob for domestic service done from Feb 1st, 2017 to Sep 2nd, 2017. Alice's gross income in 2017 was $921324. Alice takes the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2017?",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Alice",
+    "tax_year": 2017,
+    "income_tax": 344376.0,
+    "employment_tax": 420.0,
+    "reasoning": "Alice's income tax is calculated as follows: Her gross income is $921,324. Assuming a 'Single' filing status, she takes the standard deduction of $3,000. Her personal exemption of $2,000 is fully phased out because her gross income ($921,324) significantly exceeds the $250,000 phaseout threshold for single filers. The excess income of $671,324 ($921,324 - $250,000) results in 269 increments of $2,500, leading to a 538% reduction (capped at 100%), making her personal exemption $0. Therefore, her taxable income is $921,324 (gross income) - $3,000 (standard deduction) - $0 (personal exemption) = $918,324. Applying the 2017 single tax schedule (IRC §1(c)): $3,315 (15% on first $22,100) + $8,792 (28% on excess over $22,100 up to $53,500) + $19,065 (31% on excess over $53,500 up to $115,000) + $48,600 (36% on excess over $115,000 up to $250,000) + $264,604.304 (39.6% on excess over $250,000, which is $918,324 - $250,000 = $668,324). Total income tax is $3,315 + $8,792 + $19,065 + $48,600 + $264,604.304 = $344,376.304, rounded to $344,376.\n\nAlice's employment tax (FUTA) is calculated based on wages paid for domestic service. She paid $53,200 to Bob. Since this amount exceeds the $1,000 domestic service employer threshold in a calendar quarter (IRC §3306(a)(3)), Alice is subject to FUTA. The annual taxable wage cap per employee for FUTA is $7,000 (IRC §3306(b)(1)). The FUTA tax rate is 6% (IRC §3301). Therefore, the FUTA tax is 6% of $7,000 = $420.00."
+  },
+  "rule_execution": {
+    "income_tax": 344376.0,
+    "employment_tax": 420.0,
+    "calculated_total_tax": 344796.0,
+    "ground_truth_tax": 344848.0,
+    "matches_ground_truth": false
+  }
+}

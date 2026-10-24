@@ -1,0 +1,57 @@
+{
+  "pipeline": "detailed_facts_extraction",
+  "case_id": "tax_case_23",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_23.pl",
+  "scenario_text": "Alice and Bob got married on Feb 3rd, 1992. Alice died on July 9th, 2014. In 2014, Alice's gross income was $55431 and Bob's gross income was $64314. Bob files a joint return for himself and Alice for 2014. Bob takes the standard deduction.",
+  "question_text": "How much tax does Bob have to pay in 2014?",
+  "llm_extracted_facts": {
+    "target_person": "Bob",
+    "spouse": "Alice",
+    "tax_year": 2014,
+    "gross_income": 64314.0,
+    "spouse_gross_income": 55431.0,
+    "persons": [
+      {
+        "id": "Alice",
+        "name": "Alice",
+        "birth_date": null
+      },
+      {
+        "id": "Bob",
+        "name": "Bob",
+        "birth_date": null
+      }
+    ],
+    "marriages": [
+      {
+        "id": "marriage_Alice_Bob_1992",
+        "spouse_1": "Alice",
+        "spouse_2": "Bob",
+        "start_date": 19920203
+      }
+    ],
+    "deaths": [
+      {
+        "id": "death_Alice_2014",
+        "person": "Alice",
+        "death_date": 20140709
+      }
+    ],
+    "joint_returns": [
+      {
+        "id": "joint_return_Bob_Alice_2014",
+        "taxpayer_1": "Bob",
+        "taxpayer_2": "Alice",
+        "tax_year": 2014,
+        "filing_date": null
+      }
+    ]
+  },
+  "rule_execution": {
+    "derived_filing_status": "married_filing_jointly",
+    "spouse": "Alice",
+    "calculated_total_tax": 26549.0,
+    "ground_truth_tax": 26549.0,
+    "matches_ground_truth": true
+  }
+}

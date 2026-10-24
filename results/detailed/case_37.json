@@ -1,0 +1,64 @@
+{
+  "pipeline": "detailed_facts_extraction",
+  "case_id": "tax_case_37",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_37.pl",
+  "scenario_text": "Alice was born January 10th, 1992. Bob was born January 31st, 2014. Alice adopted Bob on March 4th, 2018 and Bob has lived with Alice since, in a house that Alice maintains. Alice's gross income in 2018 was $141177. Alice takes the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2018?",
+  "llm_extracted_facts": {
+    "target_person": "alice",
+    "tax_year": 2018,
+    "gross_income": 141177.0,
+    "is_unmarried": true,
+    "persons": [
+      {
+        "id": "alice",
+        "name": "Alice",
+        "birth_date": 19920110
+      },
+      {
+        "id": "bob",
+        "name": "Bob",
+        "birth_date": 20140131
+      }
+    ],
+    "adoptions": [
+      {
+        "id": "adoption_alice_bob_2018",
+        "adoptive_parent": "alice",
+        "child": "bob",
+        "start_date": 20180304
+      }
+    ],
+    "residences": [
+      {
+        "id": "res_alice_2018",
+        "person": "alice",
+        "abode": "alice_house",
+        "start_date": 20180101,
+        "end_date": 20181231
+      },
+      {
+        "id": "res_bob_2018",
+        "person": "bob",
+        "abode": "alice_house",
+        "start_date": 20180304,
+        "end_date": 20181231
+      }
+    ],
+    "household_maintenances": [
+      {
+        "id": "hm_alice_2018",
+        "agent": "alice",
+        "abode": "alice_house",
+        "amount": 0.0,
+        "start_date": 20180101
+      }
+    ]
+  },
+  "rule_execution": {
+    "derived_filing_status": "head_of_household",
+    "calculated_total_tax": 32045.0,
+    "ground_truth_tax": 32045.0,
+    "matches_ground_truth": true
+  }
+}

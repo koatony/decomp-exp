@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_10",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_10.pl",
+  "scenario_text": "Alice and Harold got married on Sep 3rd, 1992. Harold and Alice have a son, born Jan 25th, 2000. Harold died on Feb 28th, 2016. They had been living in the same house since 1993, maintained by Alice. Alice and her son continued doing so after Harold's death. Alice's gross income for the year 2017 was $236422. Alice has employed Bob, Cameron, Dan, Emily, Fred and George for agricultural labor from Sep 9th to Sep 30th 2017, and paid them $5012 each. Alice takes the standard deduction in 2017.",
+  "question_text": "How much tax does Alice have to pay in 2017?",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Alice",
+    "tax_year": 2017,
+    "income_tax": 67040.0,
+    "employment_tax": 1804.0,
+    "reasoning": "Alice qualifies as a 'Surviving spouse' for the 2017 tax year under IRC §2(a) because her husband died in 2016, and she maintains a home for her dependent son. Her gross income is $236,422. She takes the standard deduction for a surviving spouse ($6,000) and claims two personal exemptions ($2,000 each for herself and her son, totaling $4,000). Her taxable income is calculated as $236,422 (Gross Income) - $6,000 (Standard Deduction) - $4,000 (Personal Exemptions) = $226,422. Using the Married filing jointly / Surviving spouse tax schedule (IRC §1(a)), the income tax on $226,422 is $35,928.50 + 36% of the excess over $140,000 ($226,422 - $140,000 = $86,422). This results in $35,928.50 + ($0.36 * $86,422) = $35,928.50 + $31,111.92 = $67,040.42, which rounds to $67,040. For employment tax (FUTA), Alice paid $5,012 each to 6 agricultural laborers, totaling $30,072. Since this amount exceeds the agricultural labor employment threshold of $20,000 in a calendar quarter, FUTA tax applies. The FUTA tax is 6% of the taxable wages. Assuming the entire $30,072 is taxable wages (as no wage base limit is provided in the constants), the FUTA tax is $0.06 * $30,072 = $1,804.32, which rounds to $1,804."
+  },
+  "rule_execution": {
+    "income_tax": 67040.0,
+    "employment_tax": 1804.0,
+    "calculated_total_tax": 68844.0,
+    "ground_truth_tax": 68844.0,
+    "matches_ground_truth": true
+  }
+}

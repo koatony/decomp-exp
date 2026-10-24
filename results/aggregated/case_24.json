@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_24",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_24.pl",
+  "scenario_text": "Alice and Bob got married on November 23rd, 1994. Their son Charlie was born on July 5th, 2000. Bob died on March 15th, 2015. In 2017, Alice and Charlie lived in a house maintained by Alice. Alice's gross income for the year 2017 is $95129. Alice takes the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2017?",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Alice",
+    "tax_year": 2017,
+    "income_tax": 19039.0,
+    "employment_tax": 0.0,
+    "reasoning": "Alice qualifies as a 'Surviving Spouse' for the 2017 tax year under IRC §2(a) because her husband died in 2015, and she maintains a home for her dependent son, Charlie, who was 17 in 2017. Her gross income is $95,129. As a Surviving Spouse, Alice takes the standard deduction of $6,000 (IRC §63(c)(2)(A)). She can claim two personal exemptions (for herself and Charlie) at $2,000 each, totaling $4,000 (IRC §151). Her Adjusted Gross Income ($95,129) is below the PEP phaseout threshold for Surviving Spouse ($300,000), so no phaseout applies. Taxable income is calculated as Gross Income - Standard Deduction - Personal Exemptions = $95,129 - $6,000 - $4,000 = $85,129. Using the Married filing jointly / Surviving spouse tax schedule (IRC §1(a)) for 2017:\n- The first $36,900 is taxed at 15%: $36,900 * 0.15 = $5,535.\n- The remaining income ($85,129 - $36,900 = $48,229) is taxed at 28%: $48,229 * 0.28 = $13,504.12.\n- Total income tax = $5,535 + $13,504.12 = $19,039.12. Rounded half-up to the nearest integer, the income tax is $19,039.\nThere is no information indicating Alice is an employer or paid any wages subject to FUTA tax, therefore, the employment tax (FUTA) is $0."
+  },
+  "rule_execution": {
+    "income_tax": 19039.0,
+    "employment_tax": 0.0,
+    "calculated_total_tax": 19039.0,
+    "ground_truth_tax": 19039.0,
+    "matches_ground_truth": true
+  }
+}

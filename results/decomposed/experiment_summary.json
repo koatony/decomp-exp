@@ -1,0 +1,29 @@
+{
+  "experiment": "top_down_rule_decomposition",
+  "case_id": "tax_case_20",
+  "generated_rule_file": "/home/wmlab/tax_agent/rule_abstraction/results/decomposed/decomposed_case_20_rules.py",
+  "case_info": {
+    "scenario_text": "In 2017, Alice's gross income was $310192. Since 2014, Alice maintains a house where she and her daughter live. Alice was married since Jan 14th, 2010 until her husband died on Nov 23rd, 2016. In 2017, Alice is allowed itemized deductions of $17890. Alice has paid $45252 to Bob for work done in the year 2017. In 2017, Alice has also paid $9832 into a retirement fund for Bob, and paid $5322 into health insurance for Charlie, who is Alice's father and has retired in 2016. Charlie had no income in 2017.",
+    "question_text": "How much tax does Alice have to pay in 2017?",
+    "ground_truth_tax": 90683.0
+  },
+  "extracted_facts": {
+    "tax_year": 2017,
+    "filing_status": "Married filing jointly / Surviving spouse",
+    "gross_income": 310192.0,
+    "itemized_deductions_claimed": 17890.0,
+    "num_dependents": 1,
+    "employee_wages_paid": 45252.0,
+    "employee_benefit_plan_exclusions": 9832.0,
+    "num_employees": 1,
+    "is_domestic_employer": false,
+    "is_agricultural_employer": false
+  },
+  "execution_result": {
+    "execution_status": "SUCCESS",
+    "calculated_total_tax": 91396.0,
+    "ground_truth_tax": 90683.0,
+    "matches_ground_truth": false,
+    "discrepancy": 713.0
+  }
+}

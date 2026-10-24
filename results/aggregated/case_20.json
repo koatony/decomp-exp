@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_20",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_20.pl",
+  "scenario_text": "In 2017, Alice's gross income was $310192. Since 2014, Alice maintains a house where she and her daughter live. Alice was married since Jan 14th, 2010 until her husband died on Nov 23rd, 2016. In 2017, Alice is allowed itemized deductions of $17890. Alice has paid $45252 to Bob for work done in the year 2017. In 2017, Alice has also paid $9832 into a retirement fund for Bob, and paid $5322 into health insurance for Charlie, who is Alice's father and has retired in 2016. Charlie had no income in 2017.",
+  "question_text": "How much tax does Alice have to pay in 2017?",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Alice",
+    "tax_year": 2017,
+    "income_tax": 90975.0,
+    "employment_tax": 420.0,
+    "reasoning": "Alice's husband died in November 2016, and she maintains a home for her daughter in 2017. Therefore, Alice qualifies as a 'Surviving spouse' for the 2017 tax year. Her gross income is $310,192, which is also her Adjusted Gross Income (AGI) as no AGI deductions are specified.\n\nFor income tax calculation:\n1.  **Itemized Deductions:** Alice has $17,890 in itemized deductions. Under IRC §68, these are subject to an overall limitation. The applicable threshold for a surviving spouse is $300,000. The excess AGI over this threshold is $310,192 - $300,000 = $10,192. The reduction is the lesser of (a) 3% of the excess AGI ($10,192 * 0.03 = $305.76) or (b) 80% of the otherwise allowable itemized deductions ($17,890 * 0.80 = $14,312). The lesser amount is $305.76. Thus, Alice's allowable itemized deductions are $17,890 - $305.76 = $17,584.24. Since this amount is greater than the standard deduction for a surviving spouse ($6,000), Alice uses itemized deductions.\n2.  **Personal Exemptions:** Alice can claim two personal exemptions (for herself and her daughter), totaling $2,000 * 2 = $4,000. These exemptions are subject to phaseout under IRC §151(d)(3). The AGI ($310,192) exceeds the $300,000 threshold by $10,192. The exemption amount is reduced by 2 percentage points for each $2,500 (or fraction thereof) of the excess. $10,192 / $2,500 = 4.076, which rounds up to 5 increments. The total reduction is 5 * 2% = 10%. So, the allowable personal exemptions are $4,000 * (1 - 0.10) = $3,600.\n3.  **Taxable Income:** Taxable income is AGI - Allowable Itemized Deductions - Allowable Personal Exemptions = $310,192 - $17,584.24 - $3,600 = $289,007.76.\n4.  **Income Tax:** Using the 'Married filing jointly / Surviving spouse' tax schedule for 2017, a taxable income of $289,007.76 falls into the bracket for income over $250,000. The tax is $75,528.50 + 39.6% of the excess over $250,000. Tax = $75,528.50 + (0.396 * ($289,007.76 - $250,000)) = $75,528.50 + (0.396 * $39,007.76) = $75,528.50 + $15,446.98296 = $90,975.48296. Rounded half-up to the nearest integer, the income tax is $90,975.\n\nFor employment tax (FUTA) calculation:\n1.  Alice paid Bob $45,252 for work done in 2017. This amount exceeds the general commercial employment threshold of $1,500 in any calendar quarter, making Alice an employer for FUTA purposes. The FUTA annual taxable wage base limit per employee is $7,000. Therefore, only the first $7,000 of Bob's wages are subject to FUTA tax.\n2.  Payments into a retirement fund for Bob ($9,832) are excluded from wages for FUTA purposes under IRC §3306(b)(2).\n3.  Payments into health insurance for Charlie ($5,322) are also excluded from wages under IRC §3306(b)(2). Furthermore, Charlie is Alice's retired father and had no income, indicating he is not an employee for FUTA purposes.\n4.  The FUTA tax rate is 6%. Thus, the employment tax is $7,000 * 0.06 = $420."
+  },
+  "rule_execution": {
+    "income_tax": 90975.0,
+    "employment_tax": 420.0,
+    "calculated_total_tax": 91395.0,
+    "ground_truth_tax": 90683.0,
+    "matches_ground_truth": false
+  }
+}

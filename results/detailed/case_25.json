@@ -1,0 +1,97 @@
+{
+  "pipeline": "detailed_facts_extraction",
+  "case_id": "tax_case_25",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_25.pl",
+  "scenario_text": "Bob is Charlie and Dorothy's son, born on April 15th, 2015. Alice married Charlie on August 8th, 2018. Alice's and Charlie's gross incomes in 2018 were $324311 and $414231 respectively. Alice, Bob and Charlie have the same principal place of abode in 2018. Alice and Charlie file jointly in 2018, and take the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2018?",
+  "llm_extracted_facts": {
+    "target_person": "alice",
+    "spouse": "charlie",
+    "tax_year": 2018,
+    "gross_income": 324311.0,
+    "spouse_gross_income": 414231.0,
+    "persons": [
+      {
+        "id": "bob",
+        "name": "Bob",
+        "birth_date": 20150415
+      },
+      {
+        "id": "charlie",
+        "name": "Charlie",
+        "birth_date": null
+      },
+      {
+        "id": "dorothy",
+        "name": "Dorothy",
+        "birth_date": null
+      },
+      {
+        "id": "alice",
+        "name": "Alice",
+        "birth_date": null
+      }
+    ],
+    "marriages": [
+      {
+        "id": "marriage_alice_charlie",
+        "spouse_1": "alice",
+        "spouse_2": "charlie",
+        "start_date": 20180808
+      }
+    ],
+    "joint_returns": [
+      {
+        "id": "joint_return_alice_charlie_2018",
+        "taxpayer_1": "alice",
+        "taxpayer_2": "charlie",
+        "tax_year": 2018,
+        "filing_date": null
+      }
+    ],
+    "parent_child_relationships": [
+      {
+        "id": "parent_child_charlie_bob",
+        "parent": "charlie",
+        "child": "bob",
+        "relationship": "father"
+      },
+      {
+        "id": "parent_child_dorothy_bob",
+        "parent": "dorothy",
+        "child": "bob",
+        "relationship": "mother"
+      }
+    ],
+    "residences": [
+      {
+        "id": "res_alice_2018",
+        "person": "alice",
+        "abode": "abode_1",
+        "start_date": 20180101,
+        "end_date": 20181231
+      },
+      {
+        "id": "res_bob_2018",
+        "person": "bob",
+        "abode": "abode_1",
+        "start_date": 20180101,
+        "end_date": 20181231
+      },
+      {
+        "id": "res_charlie_2018",
+        "person": "charlie",
+        "abode": "abode_1",
+        "start_date": 20180101,
+        "end_date": 20181231
+      }
+    ]
+  },
+  "rule_execution": {
+    "derived_filing_status": "married_filing_jointly",
+    "spouse": "charlie",
+    "calculated_total_tax": 259487.0,
+    "ground_truth_tax": 259487.0,
+    "matches_ground_truth": true
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_25",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_25.pl",
+  "scenario_text": "Bob is Charlie and Dorothy's son, born on April 15th, 2015. Alice married Charlie on August 8th, 2018. Alice's and Charlie's gross incomes in 2018 were $324311 and $414231 respectively. Alice, Bob and Charlie have the same principal place of abode in 2018. Alice and Charlie file jointly in 2018, and take the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2018?",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Alice",
+    "tax_year": 2018,
+    "income_tax": 259587.0,
+    "employment_tax": 0.0,
+    "reasoning": "Alice and Charlie file jointly in 2018. Their combined gross income is $324,311 (Alice) + $414,231 (Charlie) = $738,542. They take the standard deduction for married filing jointly, which is $24,000 for 2018. Personal exemptions are $0 for 2018 under IRC §151(d)(5). Therefore, their taxable income is $738,542 (Gross Income) - $24,000 (Standard Deduction) - $0 (Personal Exemptions) = $714,542. \n\nUsing the Married Filing Jointly tax schedule (IRC §1(a)) for 2018:\n- Taxable Income <= $36,900: $36,900 * 0.15 = $5,535\n- $36,900 < Taxable Income <= $89,150: ($89,150 - $36,900) * 0.28 = $14,630\n- $89,150 < Taxable Income <= $140,000: ($140,000 - $89,150) * 0.31 = $15,763.50\n- $140,000 < Taxable Income <= $250,000: ($250,000 - $140,000) * 0.36 = $39,600\n- Taxable Income > $250,000: ($714,542 - $250,000) * 0.396 = $464,542 * 0.396 = $184,058.632\n\nTotal income tax = $5,535 + $14,630 + $15,763.50 + $39,600 + $184,058.632 = $259,587.132. Rounded half-up to the nearest integer, the income tax is $259,587.\n\nEmployment tax (FUTA) under IRC §3301 is an employer tax. The scenario does not indicate that Alice is an employer or paid wages to employees. Therefore, her employment tax is $0."
+  },
+  "rule_execution": {
+    "income_tax": 259587.0,
+    "employment_tax": 0.0,
+    "calculated_total_tax": 259587.0,
+    "ground_truth_tax": 259487.0,
+    "matches_ground_truth": false
+  }
+}

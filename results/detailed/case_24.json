@@ -1,0 +1,89 @@
+{
+  "pipeline": "detailed_facts_extraction",
+  "case_id": "tax_case_24",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_24.pl",
+  "scenario_text": "Alice and Bob got married on November 23rd, 1994. Their son Charlie was born on July 5th, 2000. Bob died on March 15th, 2015. In 2017, Alice and Charlie lived in a house maintained by Alice. Alice's gross income for the year 2017 is $95129. Alice takes the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2017?",
+  "llm_extracted_facts": {
+    "target_person": "Alice",
+    "tax_year": 2017,
+    "gross_income": 95129.0,
+    "persons": [
+      {
+        "id": "Alice",
+        "name": "Alice",
+        "birth_date": null
+      },
+      {
+        "id": "Bob",
+        "name": "Bob",
+        "birth_date": null
+      },
+      {
+        "id": "Charlie",
+        "name": "Charlie",
+        "birth_date": 20000705
+      }
+    ],
+    "marriages": [
+      {
+        "id": "M1",
+        "spouse_1": "Alice",
+        "spouse_2": "Bob",
+        "start_date": 19941123
+      }
+    ],
+    "deaths": [
+      {
+        "id": "D1",
+        "person": "Bob",
+        "death_date": 20150315
+      }
+    ],
+    "parent_child_relationships": [
+      {
+        "id": "PC1",
+        "parent": "Alice",
+        "child": "Charlie",
+        "relationship": "biological"
+      },
+      {
+        "id": "PC2",
+        "parent": "Bob",
+        "child": "Charlie",
+        "relationship": "biological"
+      }
+    ],
+    "residences": [
+      {
+        "id": "R1",
+        "person": "Alice",
+        "abode": "house_1",
+        "start_date": 20170101,
+        "end_date": 20171231
+      },
+      {
+        "id": "R2",
+        "person": "Charlie",
+        "abode": "house_1",
+        "start_date": 20170101,
+        "end_date": 20171231
+      }
+    ],
+    "household_maintenances": [
+      {
+        "id": "HM1",
+        "agent": "Alice",
+        "abode": "house_1",
+        "amount": 0.0,
+        "start_date": 20170101
+      }
+    ]
+  },
+  "rule_execution": {
+    "derived_filing_status": "surviving_spouse",
+    "calculated_total_tax": 19039.0,
+    "ground_truth_tax": 19039.0,
+    "matches_ground_truth": true
+  }
+}

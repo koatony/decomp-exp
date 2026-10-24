@@ -1,0 +1,61 @@
+{
+  "pipeline": "detailed_facts_extraction",
+  "case_id": "tax_case_46",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_46.pl",
+  "scenario_text": "Alice has paid $3200 to Bob for agricultural labor done from Feb 1st, 2020 to Sep 2nd, 2020. Alice paid Bob with eggs, grapes and hay. Alice has been married since 1999. Alice files a joint return with her spouse for 2020. Alice's and her spouse's gross income for the year 2020 is $103272. Alice takes the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2020?",
+  "llm_extracted_facts": {
+    "target_person": "Alice",
+    "spouse": "Alice's spouse",
+    "tax_year": 2020,
+    "gross_income": 103272.0,
+    "marriages": [
+      {
+        "id": "marriage_alice_spouse_1999",
+        "spouses": [
+          "Alice",
+          "Alice's spouse"
+        ],
+        "start_date": 19990101
+      }
+    ],
+    "joint_returns": [
+      {
+        "id": "joint_return_alice_spouse_2020",
+        "spouses": [
+          "Alice",
+          "Alice's spouse"
+        ],
+        "start_date": 20200101,
+        "tax_year": 2020
+      }
+    ],
+    "payments": [
+      {
+        "id": "payment_alice_to_bob_3200_2020",
+        "agent": "Alice",
+        "patient": "Bob",
+        "amount": 3200.0,
+        "start_date": 20200902,
+        "purpose": "agricultural labor",
+        "means": "eggs, grapes and hay"
+      }
+    ],
+    "services": [
+      {
+        "id": "service_bob_for_alice_agrilabor_2020",
+        "agent": "Bob",
+        "patient": "Alice",
+        "purpose": "agricultural labor",
+        "start_date": 20200201,
+        "end_date": 20200902
+      }
+    ]
+  },
+  "rule_execution": {
+    "derived_filing_status": "married_joint",
+    "calculated_total_tax": 17399.0,
+    "ground_truth_tax": 17399.0,
+    "matches_ground_truth": true
+  }
+}

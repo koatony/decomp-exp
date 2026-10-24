@@ -1,0 +1,72 @@
+{
+  "pipeline": "detailed_facts_extraction",
+  "case_id": "tax_case_27",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_27.pl",
+  "scenario_text": "In 2017, Alice was paid $33200. Bob is Alice's father since April 15th, 1978. In 2017, Alice and Bob lived in a house that Alice maintained. In 2017, Alice takes the standard deduction. Bob had no income in 2017.",
+  "question_text": "How much tax does Alice have to pay in 2017?",
+  "llm_extracted_facts": {
+    "target_person": "Alice",
+    "tax_year": 2017,
+    "gross_income": 33200.0,
+    "is_unmarried": true,
+    "persons": [
+      {
+        "id": "Alice",
+        "name": "Alice",
+        "birth_date": null
+      },
+      {
+        "id": "Bob",
+        "name": "Bob",
+        "birth_date": null
+      }
+    ],
+    "dependents": [
+      {
+        "id": "Bob",
+        "name": "Bob",
+        "relationship": "father",
+        "gross_income": 0.0
+      }
+    ],
+    "parent_child_relationships": [
+      {
+        "id": "rel_bob_alice",
+        "parent": "Bob",
+        "child": "Alice",
+        "relationship": "father-daughter"
+      }
+    ],
+    "residences": [
+      {
+        "id": "res_alice_house_2017",
+        "person": "Alice",
+        "abode": "a house",
+        "start_date": 20170101,
+        "end_date": 20171231
+      },
+      {
+        "id": "res_bob_house_2017",
+        "person": "Bob",
+        "abode": "a house",
+        "start_date": 20170101,
+        "end_date": 20171231
+      }
+    ],
+    "household_maintenances": [
+      {
+        "id": "maint_alice_house_2017",
+        "agent": "Alice",
+        "abode": "a house",
+        "amount": null,
+        "start_date": 20170101
+      }
+    ]
+  },
+  "rule_execution": {
+    "derived_filing_status": "head_of_household",
+    "calculated_total_tax": 3720.0,
+    "ground_truth_tax": 3720.0,
+    "matches_ground_truth": true
+  }
+}

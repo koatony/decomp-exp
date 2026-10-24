@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_26",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_26.pl",
+  "scenario_text": "Alice employed Bob from Jan 1st, 2011 to Oct 10, 2019, paying him $1513 in 2019. On Oct 10, 2019 Bob was diagnosed as disabled and retired. Alice paid Bob $298 because she had to terminate their contract due to Bob's disability. In 2019, Alice's gross income was $567192. In 2019, Alice lived together with Charlie, her father, in a house that she maintains. Charlie had no income in 2019. Alice takes the standard deduction in 2019.",
+  "question_text": "How much tax does Alice have to pay in 2019?",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Alice",
+    "tax_year": 2019,
+    "income_tax": 195964.0,
+    "employment_tax": 0.0,
+    "reasoning": "Alice's filing status is Head of Household because she is unmarried and maintains a home for herself and her father, Charlie, who had no income and is a qualifying person. Her gross income is $567,192. She takes the standard deduction for Head of Household, which is $18,000 for 2019. Personal exemptions are $0 for 2019. Therefore, her taxable income is $567,192 (Gross Income) - $18,000 (Standard Deduction) - $0 (Personal Exemptions) = $549,192. \n\nUsing the Head of Household tax schedule (IRC §1(b)) for 2019:\n- For taxable income over $250,000, the tax is $77,485 + 39.6% of the excess over $250,000.\n- Excess over $250,000 = $549,192 - $250,000 = $299,192.\n- Income tax = $77,485 + (0.396 * $299,192) = $77,485 + $118,479.072 = $195,964.072.\n- Rounded to the nearest integer, Alice's income tax is $195,964.\n\nFor employment tax (FUTA), the employer status threshold (IRC §3306(a)(1)) requires an employer to have paid wages of $1,500 or more in any calendar quarter. Alice paid Bob a total of $1,513 in wages in 2019 over a period from January 1st to October 10th (10 months). If these wages were spread over 10 months, it is not possible that $1,500 or more was paid in any single calendar quarter (e.g., $1,513 / 10 months = $151.30 per month; $151.30 * 3 months = $453.90 per quarter, which is less than $1,500). Therefore, Alice does not meet the employer status threshold for FUTA, and her employment tax is $0. The $298 paid due to disability termination is exempt from FUTA wages under IRC §3306(b)(10) regardless."
+  },
+  "rule_execution": {
+    "income_tax": 195964.0,
+    "employment_tax": 0.0,
+    "calculated_total_tax": 195964.0,
+    "ground_truth_tax": 196056.0,
+    "matches_ground_truth": false
+  }
+}

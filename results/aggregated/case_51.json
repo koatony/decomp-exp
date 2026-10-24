@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_51",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_51.pl",
+  "scenario_text": "Alice has paid $23200 in remuneration to Bob for agricultural labor done from Feb 1st, 2017 to Sep 2nd, 2017, in Caracas, Venezuela. Bob is an American citizen. Alice is an American employer. In 2017, Alice maintains as her principal place of abode a house where her mother Dorothy lives. Alice's gross income for the year 2017 is $197407. Alice takes the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2017?",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Alice",
+    "tax_year": 2017,
+    "income_tax": 55528.0,
+    "employment_tax": 420.0,
+    "reasoning": "Alice's gross income for 2017 is $197,407. Since Alice maintains a home where her mother Dorothy lives, and assuming Dorothy is a qualifying dependent, Alice qualifies for Head of Household filing status. For Head of Household, the standard deduction is $4,400. Alice can claim two personal exemptions (one for herself and one for Dorothy), totaling $4,000 ($2,000 per exemption). Alice's Adjusted Gross Income (AGI) is $197,407. Since her AGI is below the Head of Household phaseout threshold of $275,000, the personal exemptions are not reduced. Taxable income is calculated as AGI - Standard Deduction - Personal Exemptions = $197,407 - $4,400 - $4,000 = $189,007. Using the Head of Household tax schedule for 2017, the income tax is calculated as follows: $33,385 + 36% of the excess over $127,500. This results in $33,385 + 0.36 * ($189,007 - $127,500) = $33,385 + 0.36 * $61,507 = $33,385 + $22,142.52 = $55,527.52. Rounded to the nearest integer, the income tax is $55,528.\n\nFor employment tax (FUTA), Alice paid $23,200 in remuneration for agricultural labor. The FUTA threshold for agricultural labor in any calendar quarter is $20,000. Since Alice paid $23,200, which exceeds this threshold, she is subject to FUTA tax. The FUTA taxable wage base limit per employee is $7,000. Therefore, only the first $7,000 of wages paid to Bob is subject to FUTA tax. The FUTA tax rate is 6%. Thus, the employment tax is $7,000 * 0.06 = $420."
+  },
+  "rule_execution": {
+    "income_tax": 55528.0,
+    "employment_tax": 420.0,
+    "calculated_total_tax": 55948.0,
+    "ground_truth_tax": 55528.0,
+    "matches_ground_truth": false
+  }
+}

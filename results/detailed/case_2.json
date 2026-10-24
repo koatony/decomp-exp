@@ -1,0 +1,47 @@
+{
+  "pipeline": "detailed_facts_extraction",
+  "case_id": "tax_case_2",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_2.pl",
+  "scenario_text": "Alice and Bob got married on Feb 3rd, 1992. Alice and Bob have a child, Charlie, born October 9th, 2000. Alice died on July 9th, 2014. From 2004 to 2019, Bob furnished 40% of the costs of maintaining the home where he and Charlie lived during that time. In 2013, Alice and Bob filed jointly, and took the standard deduction. In 2013, Alice earned $65400 and Bob earned $56400.",
+  "question_text": "How much tax does Alice have to pay in 2013?",
+  "llm_extracted_facts": {
+    "target_person": "Alice",
+    "spouse": "Bob",
+    "tax_year": 2013,
+    "filing_status": "married_joint",
+    "incomes": [
+      {
+        "id": "alice_income_2013",
+        "agent": "Alice",
+        "amount": 65400.0,
+        "start_date": 20130101
+      },
+      {
+        "id": "bob_income_2013",
+        "agent": "Bob",
+        "amount": 56400.0,
+        "start_date": 20130101
+      }
+    ],
+    "dependents": [
+      {
+        "id": "charlie",
+        "name": "Charlie",
+        "parents": [
+          "Alice",
+          "Bob"
+        ],
+        "birth_date": 20001009
+      }
+    ]
+  },
+  "rule_execution": {
+    "computed_gross_income": 121800.0,
+    "applied_standard_deduction": 6000.0,
+    "applied_exemptions": 6000.0,
+    "computed_taxable_income": 109800.0,
+    "calculated_total_tax": 26567.0,
+    "ground_truth_tax": 26567.0,
+    "matches_ground_truth": true
+  }
+}

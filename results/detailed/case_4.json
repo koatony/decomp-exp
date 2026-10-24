@@ -1,0 +1,58 @@
+{
+  "pipeline": "detailed_facts_extraction",
+  "case_id": "tax_case_4",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_4.pl",
+  "scenario_text": "Alice has paid $3200 to Bob for domestic service done from Feb 1st, 2012 to Sep 1st, 2012, in Baltimore, Maryland, USA. Bob has paid $4500 to Alice for work done from Mar 31st, 2012 to Dec 31st, 2012. Alice takes the standard deduction in 2012.",
+  "question_text": "How much tax does Alice have to pay in 2012?",
+  "llm_extracted_facts": {
+    "target_person": "Alice",
+    "tax_year": 2012,
+    "filing_status": "single",
+    "payments": [
+      {
+        "id": "payment_1",
+        "agent": "Alice",
+        "patient": "Bob",
+        "amount": 3200.0,
+        "start_date": 20120201,
+        "purpose": "domestic service"
+      },
+      {
+        "id": "payment_2",
+        "agent": "Bob",
+        "patient": "Alice",
+        "amount": 4500.0,
+        "start_date": 20120331,
+        "purpose": "work done"
+      }
+    ],
+    "services": [
+      {
+        "id": "service_1",
+        "agent": "Bob",
+        "patient": "Alice",
+        "purpose": "domestic service",
+        "start_date": 20120201,
+        "end_date": 20120901,
+        "location": "Baltimore, Maryland, USA"
+      },
+      {
+        "id": "service_2",
+        "agent": "Alice",
+        "patient": "Bob",
+        "purpose": "work done",
+        "start_date": 20120331,
+        "end_date": 20121231,
+        "location": null
+      }
+    ]
+  },
+  "rule_execution": {
+    "computed_gross_income": 4500.0,
+    "computed_income_tax": 0.0,
+    "computed_employment_tax": 192.0,
+    "calculated_total_tax": 192.0,
+    "ground_truth_tax": 192.0,
+    "matches_ground_truth": true
+  }
+}

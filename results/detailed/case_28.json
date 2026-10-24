@@ -1,0 +1,49 @@
+{
+  "pipeline": "detailed_facts_extraction",
+  "case_id": "tax_case_28",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_28.pl",
+  "scenario_text": "Alice has paid wages of $53200 to Bob for domestic service done from Feb 1st, 2017 to Sep 2nd, 2017. Alice's gross income in 2017 was $921324. Alice takes the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2017?",
+  "llm_extracted_facts": {
+    "target_person": "Alice",
+    "tax_year": 2017,
+    "gross_income": 921324.0,
+    "is_unmarried": true,
+    "persons": [
+      {
+        "id": "Alice",
+        "name": "Alice"
+      },
+      {
+        "id": "Bob",
+        "name": "Bob"
+      }
+    ],
+    "payments": [
+      {
+        "id": "payment_1",
+        "agent": "Alice",
+        "patient": "Bob",
+        "amount": 53200.0,
+        "purpose": "wages",
+        "start_date": 20170201,
+        "end_date": 20170902
+      }
+    ],
+    "services": [
+      {
+        "id": "service_1",
+        "agent": "Bob",
+        "patient": "Alice",
+        "purpose": "domestic service",
+        "start_date": 20170201,
+        "end_date": 20170902
+      }
+    ]
+  },
+  "rule_execution": {
+    "calculated_total_tax": 344848.0,
+    "ground_truth_tax": 344848.0,
+    "matches_ground_truth": true
+  }
+}

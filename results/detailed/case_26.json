@@ -1,0 +1,97 @@
+{
+  "pipeline": "detailed_facts_extraction",
+  "case_id": "tax_case_26",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_26.pl",
+  "scenario_text": "Alice employed Bob from Jan 1st, 2011 to Oct 10, 2019, paying him $1513 in 2019. On Oct 10, 2019 Bob was diagnosed as disabled and retired. Alice paid Bob $298 because she had to terminate their contract due to Bob's disability. In 2019, Alice's gross income was $567192. In 2019, Alice lived together with Charlie, her father, in a house that she maintains. Charlie had no income in 2019. Alice takes the standard deduction in 2019.",
+  "question_text": "How much tax does Alice have to pay in 2019?",
+  "llm_extracted_facts": {
+    "target_person": "Alice",
+    "tax_year": 2019,
+    "gross_income": 567192.0,
+    "is_unmarried": true,
+    "persons": [
+      {
+        "id": "Alice",
+        "name": "Alice",
+        "birth_date": null
+      },
+      {
+        "id": "Bob",
+        "name": "Bob",
+        "birth_date": null
+      },
+      {
+        "id": "Charlie",
+        "name": "Charlie",
+        "birth_date": null
+      }
+    ],
+    "dependents": [
+      {
+        "id": "Charlie",
+        "name": "Charlie",
+        "relationship": "father",
+        "gross_income": 0.0
+      }
+    ],
+    "parent_child_relationships": [
+      {
+        "id": "Alice_Charlie_parent_child",
+        "parent": "Charlie",
+        "child": "Alice",
+        "relationship": "child"
+      }
+    ],
+    "payments": [
+      {
+        "id": "payment_bob_employment_2019",
+        "agent": "Alice",
+        "patient": "Bob",
+        "amount": 1513.0,
+        "purpose": "employment",
+        "is_disability_retirement": false,
+        "start_date": 20190101
+      },
+      {
+        "id": "payment_bob_disability_2019",
+        "agent": "Alice",
+        "patient": "Bob",
+        "amount": 298.0,
+        "purpose": "contract termination",
+        "is_disability_retirement": true,
+        "start_date": 20191010
+      }
+    ],
+    "residences": [
+      {
+        "id": "residence_alice_2019",
+        "person": "Alice",
+        "abode": "house",
+        "start_date": 20190101,
+        "end_date": 20191231
+      },
+      {
+        "id": "residence_charlie_2019",
+        "person": "Charlie",
+        "abode": "house",
+        "start_date": 20190101,
+        "end_date": 20191231
+      }
+    ],
+    "household_maintenances": [
+      {
+        "id": "maintenance_alice_house_2019",
+        "agent": "Alice",
+        "abode": "house",
+        "amount": null,
+        "start_date": 20190101
+      }
+    ]
+  },
+  "rule_execution": {
+    "derived_filing_status": "head_of_household",
+    "calculated_total_tax": 196056.0,
+    "ground_truth_tax": 196056.0,
+    "matches_ground_truth": true
+  }
+}

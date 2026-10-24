@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_23",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_23.pl",
+  "scenario_text": "Alice and Bob got married on Feb 3rd, 1992. Alice died on July 9th, 2014. In 2014, Alice's gross income was $55431 and Bob's gross income was $64314. Bob files a joint return for himself and Alice for 2014. Bob takes the standard deduction.",
+  "question_text": "How much tax does Bob have to pay in 2014?",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Bob",
+    "tax_year": 2014,
+    "income_tax": 26549.0,
+    "employment_tax": 0.0,
+    "reasoning": "For the 2014 tax year, Bob files as Married Filing Jointly with Alice, as allowed by IRC §6013(a)(2) because Alice died during the year and Bob did not remarry. Their combined gross income is $55,431 (Alice) + $64,314 (Bob) = $119,745. Since no adjustments to income are mentioned, their Adjusted Gross Income (AGI) is $119,745. Bob takes the standard deduction for Married Filing Jointly, which is $6,000 (IRC §63(c)(2)(A)). They are also entitled to two personal exemptions (for Bob and Alice) at $2,000 each, totaling $4,000 (IRC §151). Their AGI of $119,745 is below the PEP phaseout threshold for Married Filing Jointly, so the full exemption amount is allowed. Taxable income is calculated as AGI - Standard Deduction - Personal Exemptions = $119,745 - $6,000 - $4,000 = $109,745. Using the 2014 Married Filing Jointly tax schedule (IRC §1(a)): the tax is $20,165 + 31% of the amount over $89,150. This calculates to $20,165 + 0.31 * ($109,745 - $89,150) = $20,165 + 0.31 * $20,595 = $20,165 + $6,384.45 = $26,549.45. Rounding this to the nearest integer using the half-up rule results in an income_tax of $26,549.0. No information is provided regarding Bob or Alice being an employer or paying wages, therefore, no FUTA employment_tax (IRC §3301) is applicable, resulting in $0.0."
+  },
+  "rule_execution": {
+    "income_tax": 26549.0,
+    "employment_tax": 0.0,
+    "calculated_total_tax": 26549.0,
+    "ground_truth_tax": 26549.0,
+    "matches_ground_truth": true
+  }
+}

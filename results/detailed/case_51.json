@@ -1,0 +1,57 @@
+{
+  "pipeline": "detailed_facts_extraction",
+  "case_id": "tax_case_51",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_51.pl",
+  "scenario_text": "Alice has paid $23200 in remuneration to Bob for agricultural labor done from Feb 1st, 2017 to Sep 2nd, 2017, in Caracas, Venezuela. Bob is an American citizen. Alice is an American employer. In 2017, Alice maintains as her principal place of abode a house where her mother Dorothy lives. Alice's gross income for the year 2017 is $197407. Alice takes the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2017?",
+  "llm_extracted_facts": {
+    "target_person": "Alice",
+    "tax_year": 2017,
+    "gross_income": 197407.0,
+    "filing_status": "",
+    "is_unmarried": null,
+    "household_furnish_ratio": null,
+    "dependents": [],
+    "payments": [
+      {
+        "id": "payment_alice_to_bob_2017",
+        "agent": "Alice",
+        "patient": "Bob",
+        "amount": 23200.0,
+        "start_date": 20170201,
+        "purpose": "agricultural labor",
+        "means": "remuneration"
+      }
+    ],
+    "services": [
+      {
+        "id": "service_bob_to_alice_2017",
+        "agent": "Bob",
+        "patient": "Alice",
+        "purpose": "agricultural labor",
+        "start_date": 20170201,
+        "end_date": 20170902,
+        "location": "Caracas",
+        "country": "Venezuela"
+      }
+    ],
+    "residences": [
+      {
+        "person": "Alice",
+        "abode": "house",
+        "start_date": 20170101,
+        "end_date": 20171231
+      },
+      {
+        "person": "Dorothy",
+        "abode": "house",
+        "start_date": 20170101,
+        "end_date": 20171231
+      }
+    ]
+  },
+  "rule_execution": {
+    "execution_error": "TypeError: float() argument must be a string or a real number, not 'NoneType'",
+    "matches_ground_truth": false
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_37",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_37.pl",
+  "scenario_text": "Alice was born January 10th, 1992. Bob was born January 31st, 2014. Alice adopted Bob on March 4th, 2018 and Bob has lived with Alice since, in a house that Alice maintains. Alice's gross income in 2018 was $141177. Alice takes the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2018?",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Alice",
+    "tax_year": 2018,
+    "income_tax": 32044.0,
+    "employment_tax": 0.0,
+    "reasoning": "Alice qualifies for the Head of Household filing status for 2018 because she is unmarried and maintains a home for Bob, her adopted child, who lived with her for more than half the year and was under 19 at the end of the tax year. Her gross income is $141,177. For 2018, the standard deduction for Head of Household is $18,000. Personal exemptions are $0 for 2018 under TCJA rules. Therefore, Alice's taxable income is $141,177 (Gross Income) - $18,000 (Standard Deduction) = $123,177. Using the Head of Household tax schedule (IRC §1(b)) for 2018:\n- The first $29,600 is taxed at 15%: $29,600 * 0.15 = $4,440.\n- The income between $29,600 and $76,400 ($46,800) is taxed at 28%: $46,800 * 0.28 = $13,104.\n- The income between $76,400 and $127,500 ($51,100) is taxed at 31%. Alice's remaining taxable income is $123,177 - $76,400 = $46,777. This amount falls within this bracket. So, $46,777 * 0.31 = $14,499.87.\nTotal income tax = $4,440 + $13,104 + $14,499.87 = $32,043.87. Rounded half-up to the nearest integer, the income tax is $32,044. There is no information indicating Alice is an employer or pays wages, so no FUTA employment tax is applicable."
+  },
+  "rule_execution": {
+    "income_tax": 32044.0,
+    "employment_tax": 0.0,
+    "calculated_total_tax": 32044.0,
+    "ground_truth_tax": 32045.0,
+    "matches_ground_truth": false
+  }
+}
