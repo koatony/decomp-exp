@@ -1,0 +1,21 @@
+{
+  "pipeline": "aggregated_tax_inputs_extraction",
+  "case_id": "tax_case_29",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_29.pl",
+  "scenario_text": "Alice has been married since April 4th, 2015. Alice files a joint return with her spouse for 2016. Alice's and her spouse's gross income for the year 2016 is $164612. Alice has paid $4525 to Bob for work done in the year 2016. In 2016, Alice has also paid $9832 into a retirement fund for Bob, and paid $5322 into health insurance for Charlie, who is Alice's father and has retired in 2016. Charlie had no income in 2016. Alice and her spouse take the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2016?",
+  "llm_extracted_aggregated_inputs": {
+    "target_person": "Alice",
+    "tax_year": 2016,
+    "income_tax": 40469.0,
+    "employment_tax": 272.0,
+    "reasoning": "For income_tax: Alice files as Married Filing Jointly. Their gross income is $164,612. They take the standard deduction of $6,000 (IRC §63(c)(2)(A)). They claim 3 personal exemptions: Alice, her spouse, and Charlie (Alice's father, as a qualifying relative since Alice provided support and Charlie had no income). Each exemption is $2,000, totaling $6,000 (IRC §151). Their AGI ($164,612) is below the $300,000 PEP phaseout threshold, so no phaseout applies. Taxable income is $164,612 (Gross Income) - $6,000 (Standard Deduction) - $6,000 (Personal Exemptions) = $152,612. Using the Married Filing Jointly tax schedule (IRC §1(a)), the tax is calculated as $35,928.50 + 36% * ($152,612 - $140,000) = $35,928.50 + $4,540.32 = $40,468.82. Rounded to the nearest integer, the income tax is $40,469.\n\nFor employment_tax: Alice paid $4,525 to Bob for work done in 2016. This amount exceeds the $1,500 employer status threshold for FUTA (IRC §3306(a)(1)). The $9,832 paid into a retirement fund for Bob is excluded from FUTA wages under IRC §3306(b)(2)(A). The taxable FUTA wages for Bob are $4,525, as this is below the $7,000 annual wage cap (IRC §3306(b)(1)). The FUTA tax rate is 6% (IRC §3301). Therefore, the employment tax is $4,525 * 0.06 = $271.50. Rounded to the nearest integer, the employment tax is $272."
+  },
+  "rule_execution": {
+    "income_tax": 40469.0,
+    "employment_tax": 272.0,
+    "calculated_total_tax": 40741.0,
+    "ground_truth_tax": 40741.0,
+    "matches_ground_truth": true
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "pipeline": "detailed_facts_extraction",
+  "case_id": "tax_case_29",
+  "source_file": "/home/wmlab/tax_agent/sara_v3/cases/tax_case_29.pl",
+  "scenario_text": "Alice has been married since April 4th, 2015. Alice files a joint return with her spouse for 2016. Alice's and her spouse's gross income for the year 2016 is $164612. Alice has paid $4525 to Bob for work done in the year 2016. In 2016, Alice has also paid $9832 into a retirement fund for Bob, and paid $5322 into health insurance for Charlie, who is Alice's father and has retired in 2016. Charlie had no income in 2016. Alice and her spouse take the standard deduction.",
+  "question_text": "How much tax does Alice have to pay in 2016?",
+  "llm_extracted_facts": {
+    "target_person": "Alice",
+    "spouse": "Alice's Spouse",
+    "tax_year": 2016,
+    "gross_income": 164612.0,
+    "persons": [
+      {
+        "id": "Alice",
+        "name": "Alice"
+      },
+      {
+        "id": "Alice's Spouse",
+        "name": "Alice's Spouse"
+      },
+      {
+        "id": "Bob",
+        "name": "Bob"
+      },
+      {
+        "id": "Charlie",
+        "name": "Charlie"
+      }
+    ],
+    "marriages": [
+      {
+        "id": "marriage_1",
+        "spouse_1": "Alice",
+        "spouse_2": "Alice's Spouse",
+        "start_date": 20150404
+      }
+    ],
+    "joint_returns": [
+      {
+        "id": "joint_return_1",
+        "taxpayer_1": "Alice",
+        "taxpayer_2": "Alice's Spouse",
+        "tax_year": 2016
+      }
+    ],
+    "parent_child_relationships": [
+      {
+        "id": "parent_child_1",
+        "parent": "Charlie",
+        "child": "Alice",
+        "relationship": "father"
+      }
+    ],
+    "dependents": [
+      {
+        "id": "dependent_1",
+        "name": "Charlie",
+        "relationship": "father",
+        "gross_income": 0.0
+      }
+    ],
+    "payments": [
+      {
+        "id": "payment_1",
+        "agent": "Alice",
+        "patient": "Bob",
+        "amount": 4525.0,
+        "purpose": "work",
+        "is_retirement_plan": false,
+        "start_date": 20160101
+      },
+      {
+        "id": "payment_2",
+        "agent": "Alice",
+        "patient": "Bob",
+        "amount": 9832.0,
+        "purpose": "retirement fund",
+        "is_retirement_plan": true,
+        "start_date": 20160101
+      },
+      {
+        "id": "payment_3",
+        "agent": "Alice",
+        "patient": "Charlie",
+        "amount": 5322.0,
+        "purpose": "health insurance",
+        "is_retirement_plan": false,
+        "start_date": 20160101
+      }
+    ]
+  },
+  "rule_execution": {
+    "derived_filing_status": "married_filing_jointly",
+    "spouse": "Alice's Spouse",
+    "calculated_total_tax": 40741.0,
+    "ground_truth_tax": 40741.0,
+    "matches_ground_truth": true
+  }
+}
